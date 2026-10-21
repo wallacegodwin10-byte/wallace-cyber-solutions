@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import {
   Shield,
@@ -19,21 +20,26 @@ export default function Home() {
 
       {/* NAVBAR */}
 
-      <nav className="flex items-center justify-between px-8 py-6 border-b border-white/10">
+      <nav className="flex items-center justify-between px-8 py-6 border-b border-white/10 backdrop-blur">
 
         <a href="/">
-          <h1 className="text-2xl font-bold tracking-wide hover:text-blue-400 transition">
-            WALLACE CYBER SOLUTIONS
-          </h1>
+          <Image
+            src="/logo.png"
+            alt="WCS Logo"
+            width={170}
+            height={60}
+            className="object-contain hover:opacity-80 transition"
+            priority
+          />
         </a>
 
-        <div className="hidden md:flex items-center gap-8 text-sm text-white/70">
+        <div className="hidden md:flex items-center gap-10 text-sm text-zinc-400">
 
           <a
             href="#services"
             className="hover:text-white transition"
           >
-            Services
+            Platform
           </a>
 
           <a
@@ -44,7 +50,7 @@ export default function Home() {
           </a>
 
           <a
-            href="/frameworks"
+            href="/
             className="hover:text-white transition"
           >
             Frameworks
@@ -64,84 +70,140 @@ export default function Home() {
             Compliance Center
           </a>
 
-          <a
-            href="/trust-center"
-            className="hover:text-white transition"
-          >
-            Trust Center
-          </a>
-
         </div>
 
       </nav>
 
       {/* HERO */}
 
-      <section className="relative px-8 py-32 max-w-7xl mx-auto">
+      <section className="relative overflow-hidden border-b border-white/10">
 
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="max-w-4xl"
-        >
+        {/* GRID */}
 
-          <div className="mb-6 inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-white/70 backdrop-blur">
-            Governance • Risk • Compliance • Cybersecurity
-          </div>
-
-          <h1 className="text-6xl md:text-7xl font-bold leading-tight tracking-tight">
-
-            Enterprise GRC
-            <span className="block text-zinc-400">
-              Built For Modern Organizations
-            </span>
-
-          </h1>
-
-          <p className="mt-8 text-lg text-zinc-400 max-w-2xl leading-relaxed">
-
-            WALLACE CYBER SOLUTIONS centralizes cybersecurity,
-            compliance operations, evidence collection,
-            governance workflows, and enterprise risk management
-            into one integrated platform.
-
-          </p>
-
-          <div className="mt-10 flex flex-wrap gap-4">
-
-            <a href="/frameworks">
-
-              <Button className="bg-white text-black hover:bg-zinc-200 rounded-2xl px-6 py-6 text-sm">
-
-                Launch Platform
-
-                <ArrowRight className="ml-2 h-4 w-4" />
-
-              </Button>
-
-            </a>
-
-            <a href="/admin/clients">
-
-              <Button
-                variant="outline"
-                className="border-white/20 bg-transparent text-white hover:bg-white/10 rounded-2xl px-6 py-6 text-sm"
-              >
-
-                Start Assessment
-
-              </Button>
-
-            </a>
-
-          </div>
-
-        </motion.div>
+        <div className="absolute inset-0 opacity-[0.03] bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:90px_90px]" />
 
         {/* GLOW */}
 
-        <div className="absolute top-20 right-0 h-96 w-96 rounded-full bg-blue-500/20 blur-3xl" />
+        <div className="absolute top-0 right-0 h-[700px] w-[700px] rounded-full bg-blue-500/10 blur-3xl" />
+
+        <div className="relative max-w-7xl mx-auto px-8 pt-40 pb-44">
+
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="max-w-5xl"
+          >
+
+            <div className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-5 py-2 text-sm text-zinc-400 backdrop-blur">
+
+              Enterprise Governance • Risk • Compliance Platform
+
+            </div>
+
+            <h1 className="mt-10 text-7xl md:text-8xl font-bold tracking-tight leading-[0.92]">
+
+              Continuous
+              <span className="block text-zinc-500">
+                Cybersecurity
+              </span>
+
+              <span className="block">
+                Governance
+              </span>
+
+            </h1>
+
+            <p className="mt-10 max-w-2xl text-xl leading-relaxed text-zinc-400">
+
+              WALLACE CYBER SOLUTIONS centralizes
+              cybersecurity governance, compliance operations,
+              evidence management, operational risk visibility,
+              and enterprise security workflows into one
+              integrated platform.
+
+            </p>
+
+            {/* CTA */}
+
+            <div className="mt-14 flex flex-wrap gap-5">
+
+              <a href="/frameworks">
+
+                <Button className="h-14 rounded-2xl bg-white px-8 text-black hover:bg-zinc-200 text-sm font-semibold">
+
+                  Launch Platform
+
+                  <ArrowRight className="ml-2 h-4 w-4" />
+
+                </Button>
+
+              </a>
+
+              <a href="/compliance-center">
+
+                <Button
+                  variant="outline"
+                  className="h-14 rounded-2xl border-white/15 bg-transparent px-8 text-sm text-white hover:bg-white/10"
+                >
+
+                  Explore Compliance Center
+
+                </Button>
+
+              </a>
+
+            </div>
+
+            {/* METRICS */}
+
+            <div className="mt-28 grid grid-cols-2 md:grid-cols-4 gap-12">
+
+              <div>
+                <p className="text-5xl font-bold">
+                  6+
+                </p>
+
+                <p className="mt-3 text-xs uppercase tracking-[0.25em] text-zinc-500">
+                  Compliance Frameworks
+                </p>
+              </div>
+
+              <div>
+                <p className="text-5xl font-bold">
+                  GRC
+                </p>
+
+                <p className="mt-3 text-xs uppercase tracking-[0.25em] text-zinc-500">
+                  Governance Infrastructure
+                </p>
+              </div>
+
+              <div>
+                <p className="text-5xl font-bold">
+                  AI
+                </p>
+
+                <p className="mt-3 text-xs uppercase tracking-[0.25em] text-zinc-500">
+                  Future Intelligence Workflows
+                </p>
+              </div>
+
+              <div>
+                <p className="text-5xl font-bold">
+                  24/7
+                </p>
+
+                <p className="mt-3 text-xs uppercase tracking-[0.25em] text-zinc-500">
+                  Operational Visibility
+                </p>
+              </div>
+
+            </div>
+
+          </motion.div>
+
+        </div>
 
       </section>
 
@@ -149,47 +211,55 @@ export default function Home() {
 
       <section
         id="services"
-        className="px-8 py-24 border-t border-white/10"
+        className="px-8 py-40"
       >
 
         <div className="max-w-7xl mx-auto">
 
-          <div className="mb-16">
+          <div className="max-w-3xl mb-24">
 
-            <p className="text-sm uppercase tracking-[0.2em] text-zinc-500">
+            <p className="text-sm uppercase tracking-[0.25em] text-zinc-500">
               Enterprise Platform Modules
             </p>
 
-            <h2 className="mt-4 text-4xl font-bold">
-              Governance Risk & Compliance Operations
+            <h2 className="mt-6 text-6xl font-bold leading-tight">
+
+              Operational
+              <span className="block text-zinc-500">
+                Cybersecurity Infrastructure
+              </span>
+
             </h2>
 
           </div>
 
-          <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-12">
 
             {services.map((service, index) => (
               <motion.div
                 key={index}
                 whileHover={{ y: -8 }}
-                className="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur"
+                className="group"
               >
 
-                <service.icon className="h-10 w-10 text-blue-400 mb-6" />
+                <service.icon className="h-12 w-12 text-blue-400 mb-8" />
 
-                <h3 className="text-2xl font-semibold mb-4">
+                <h3 className="text-3xl font-semibold mb-5">
                   {service.title}
                 </h3>
 
-                <p className="text-zinc-400 leading-relaxed">
+                <p className="text-zinc-400 leading-relaxed text-lg">
                   {service.description}
                 </p>
 
-                <a href={service.link}>
+                <a
+                  href={service.link}
+                  className="inline-flex items-center mt-8 text-sm text-white group-hover:text-blue-400 transition"
+                >
 
-                  <button className="mt-8 rounded-2xl bg-blue-500 px-5 py-3 hover:bg-blue-400 transition">
-                    Open Module
-                  </button>
+                  Open Module
+
+                  <ArrowRight className="ml-2 h-4 w-4" />
 
                 </a>
 
@@ -206,88 +276,49 @@ export default function Home() {
 
       <section
         id="about"
-        className="px-8 py-32 border-t border-white/10"
+        className="border-t border-white/10 px-8 py-40"
       >
 
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-28">
 
           <div>
 
-            <p className="text-sm uppercase tracking-[0.2em] text-zinc-500">
+            <p className="text-sm uppercase tracking-[0.25em] text-zinc-500">
               About The Platform
             </p>
 
-            <h2 className="mt-6 text-5xl font-bold leading-tight">
+            <h2 className="mt-6 text-6xl font-bold leading-tight">
 
-              Workflow-Driven
-              <span className="block text-zinc-400">
-                Cybersecurity Infrastructure
+              Enterprise
+              <span className="block text-zinc-500">
+                Governance Systems
               </span>
 
             </h2>
 
-            <p className="mt-8 text-zinc-400 text-lg leading-relaxed">
-
-              WALLACE CYBER SOLUTIONS is evolving into
-              a modern enterprise GRC platform focused on
-              compliance automation, evidence management,
-              risk intelligence, AI-assisted governance,
-              and operational security workflows.
-
-            </p>
-
-            <p className="mt-6 text-zinc-500 leading-relaxed">
-
-              The platform supports multiple frameworks
-              including NIST, ISO 27001, SOC2, PHIPA,
-              PIPEDA, HIPAA, CIS Controls, and future
-              AI governance standards.
-
-            </p>
-
           </div>
 
-          <div className="grid grid-cols-2 gap-6">
+          <div>
 
-            <div className="rounded-3xl border border-white/10 bg-white/5 p-8">
-              <h3 className="text-5xl font-bold text-blue-400">
-                GRC
-              </h3>
+            <p className="text-xl leading-relaxed text-zinc-400">
 
-              <p className="mt-4 text-zinc-400">
-                Governance risk and compliance operations
-              </p>
-            </div>
+              WALLACE CYBER SOLUTIONS is evolving into a
+              modern Governance, Risk & Compliance platform
+              focused on cybersecurity operations,
+              compliance automation, evidence management,
+              risk visibility, and enterprise governance workflows.
 
-            <div className="rounded-3xl border border-white/10 bg-white/5 p-8">
-              <h3 className="text-5xl font-bold text-blue-400">
-                AI
-              </h3>
+            </p>
 
-              <p className="mt-4 text-zinc-400">
-                Intelligent compliance and risk workflows
-              </p>
-            </div>
+            <p className="mt-10 text-lg leading-relaxed text-zinc-500">
 
-            <div className="rounded-3xl border border-white/10 bg-white/5 p-8">
-              <h3 className="text-5xl font-bold text-blue-400">
-                24/7
-              </h3>
+              The platform supports compliance frameworks
+              including NIST CSF, ISO 27001, SOC 2,
+              HIPAA, PHIPA, PIPEDA, and CIS Controls while
+              enabling centralized assessment management,
+              operational monitoring, and governance intelligence.
 
-              <p className="mt-4 text-zinc-400">
-                Continuous monitoring mindset
-              </p>
-            </div>
-
-            <div className="rounded-3xl border border-white/10 bg-white/5 p-8">
-              <h3 className="text-5xl font-bold text-blue-400">
-                6+
-              </h3>
-
-              <p className="mt-4 text-zinc-400">
-                Supported compliance frameworks
-              </p>
-            </div>
+            </p>
 
           </div>
 
@@ -297,38 +328,41 @@ export default function Home() {
 
       {/* CTA */}
 
-      <section className="px-8 py-32 border-t border-white/10">
+      <section className="border-t border-white/10 px-8 py-40">
 
         <div className="max-w-5xl mx-auto text-center">
 
-          <p className="text-sm uppercase tracking-[0.2em] text-zinc-500">
+          <p className="text-sm uppercase tracking-[0.25em] text-zinc-500">
             Enterprise Cybersecurity Platform
           </p>
 
-          <h2 className="mt-6 text-5xl md:text-6xl font-bold leading-tight">
+          <h2 className="mt-8 text-7xl font-bold leading-tight">
 
-            Centralize Security
-            <span className="block text-zinc-400">
-              Governance & Compliance
+            Operationalize
+            <span className="block text-zinc-500">
+              Cybersecurity Governance
             </span>
 
           </h2>
 
-          <p className="mt-8 text-zinc-400 text-lg leading-relaxed max-w-2xl mx-auto">
+          <p className="mt-10 text-xl leading-relaxed text-zinc-400 max-w-3xl mx-auto">
 
-            Manage frameworks, automate evidence collection,
-            track risks, generate audit reports, and improve
-            enterprise cybersecurity posture through one
+            Centralize governance operations,
+            compliance workflows, audit readiness,
+            risk intelligence, and enterprise
+            security visibility through one
             integrated operational platform.
 
           </p>
 
-          <div className="mt-10 flex justify-center gap-4 flex-wrap">
+          <div className="mt-14 flex justify-center gap-5 flex-wrap">
 
             <a href="/frameworks">
 
-              <Button className="bg-white text-black hover:bg-zinc-200 rounded-2xl px-6 py-6">
+              <Button className="h-14 rounded-2xl bg-white px-8 text-black hover:bg-zinc-200">
+
                 Open Frameworks
+
               </Button>
 
             </a>
@@ -337,9 +371,11 @@ export default function Home() {
 
               <Button
                 variant="outline"
-                className="border-white/20 bg-transparent text-white hover:bg-white/10 rounded-2xl px-6 py-6"
+                className="h-14 rounded-2xl border-white/15 bg-transparent px-8 text-white hover:bg-white/10"
               >
+
                 Run Assessments
+
               </Button>
 
             </a>
@@ -352,23 +388,27 @@ export default function Home() {
 
       {/* FOOTER */}
 
-      <footer className="border-t border-white/10 px-8 py-10">
+      <footer className="border-t border-white/10 px-8 py-12">
 
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
 
           <div>
 
-            <h3 className="text-xl font-bold">
-              WALLACE CYBER SOLUTIONS
-            </h3>
+            <Image
+              src="/logo.png"
+              alt="WCS Logo"
+              width={150}
+              height={50}
+              className="object-contain"
+            />
 
-            <p className="mt-2 text-zinc-500 text-sm">
+            <p className="mt-4 text-sm text-zinc-500">
               Governance • Risk • Compliance • Cybersecurity
             </p>
 
           </div>
 
-          <div className="flex items-center gap-6 text-sm text-zinc-500">
+          <div className="flex items-center gap-8 text-sm text-zinc-500">
 
             <a href="/frameworks">
               Frameworks
@@ -400,43 +440,43 @@ const services = [
   {
     title: "Framework Management",
     description:
-      "Centralized compliance framework operations for NIST, ISO 27001, SOC2, HIPAA, PHIPA, PIPEDA, and CIS Controls.",
+      "Centralized governance and compliance management across NIST, ISO 27001, SOC 2, HIPAA, PHIPA, PIPEDA, and CIS Controls.",
     icon: Shield,
     link: "/frameworks",
   },
   {
-    title: "Evidence Collection",
+    title: "Evidence Operations",
     description:
-      "Upload audit evidence, policies, screenshots, and compliance documentation with framework mapping.",
+      "Collect audit evidence, policies, reports, screenshots, and compliance artifacts with framework mapping workflows.",
     icon: FileCheck,
     link: "/admin/clients",
   },
   {
     title: "Risk Intelligence",
     description:
-      "Track compliance gaps, vulnerabilities, remediation priorities, and operational risk scoring.",
+      "Monitor vulnerabilities, operational risks, compliance gaps, and remediation priorities across the organization.",
     icon: Lock,
     link: "/compliance-center",
   },
   {
     title: "Compliance Analytics",
     description:
-      "Visualize readiness scores, failed controls, audit status, and organizational compliance posture.",
+      "Visualize readiness scoring, framework maturity, audit status, and organizational compliance posture.",
     icon: BarChart3,
     link: "/compliance-center",
   },
   {
     title: "AI Governance",
     description:
-      "Future AI-assisted remediation, policy generation, audit summaries, and compliance intelligence.",
+      "Future AI-powered governance workflows, remediation guidance, policy generation, and audit intelligence.",
     icon: Brain,
     link: "/ai-assistant",
   },
   {
     title: "Operational Infrastructure",
     description:
-      "Integrated governance workflows, evidence management, reporting, and enterprise security operations.",
+      "Integrated governance systems, enterprise reporting, compliance workflows, and cybersecurity operational visibility.",
     icon: Database,
     link: "/frameworks",
   },
-];
+]; x/x//frameworks". 
